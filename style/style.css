@@ -1,0 +1,737 @@
+.loader{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin: 0 auto;
+    background-color: #FFF;
+    z-index: 2;
+}
+
+.loader object{
+    width: 250px;
+}
+
+.body_loader{
+    overflow: hidden;
+}
+
+/* #################### FONT IMPORT #################### */
+
+@font-face {
+    font-family: Roboto;
+    src: url(../font/Roboto.woff2);
+}
+
+@font-face {
+    font-family: ShareTechMono;
+    src: url('../font/ShareTechMono.woff2');
+}
+
+/* #################### CSS RESET #################### */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    overflow-x: hidden;
+    width: 100vw;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+input{
+    all: unset;
+}
+
+/* #################### DEFALT TAGS #################### */
+
+h1{
+    font-family: ShareTechMono, Fallback, sans-serif;
+    font-size: 40pt;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+h2{
+    font-family: Roboto, Fallback, sans-serif;
+    font-size: 25pt;
+    font-weight: 400;
+    line-height: 40pt;
+}
+
+h3{
+    font-family: ShareTechMono, Fallback, sans-serif;
+    font-size: 30pt;
+}
+
+h4{
+    font-family: ShareTechMono, Fallback, sans-serif;
+    font-size: 16pt;
+    text-transform: capitalize;
+}
+
+h5{
+    font-family: ShareTechMono, Fallback, sans-serif;
+    font-size: 27pt;
+    text-transform: capitalize;
+}
+
+p{
+    font-family: Roboto, Fallback, sans-serif;
+}
+
+/* #################### HEADER #################### */
+
+header{
+    transition: background-color 0.5s;
+}
+
+.header{
+    padding: 20px 0;
+    background-color: #230930;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    max-width: 100vw;
+}
+
+.header_mobile{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: none;
+    background-color: #230930;
+    max-height: 100px;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+.header_mobile img{
+    height: 70px;
+}
+.header_mobile button{
+    all: unset;
+    height: 70px;
+    width: 70px;
+    background-color: transparent;
+    background-image: url('../img/menu_branco.svg');
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.header_mobile button:hover{
+    cursor: pointer;
+}
+
+.header_mobile_scrolled{
+    background-color: #FFF;
+}
+
+.header_mobile_scrolled button{
+    background-image: url('../img/menu_preto.svg');
+}
+
+.menu{
+    position: sticky;
+    top: 0;
+    position: absolute;
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    background-color: #230930;
+    right: 0;
+    top: 0;
+    align-items: flex-end;
+    justify-content: flex-start;
+    flex-direction: column;
+    z-index: 2;
+    padding: 20px 40px;
+}
+
+.menu a{
+    text-decoration: none;
+    color: white;
+    font-size: 30pt;
+    font-family: ShareTechMono;
+    line-height: 70pt;
+}
+
+.menu button{
+    all: unset;
+    height: 70px;
+    width: 70px;
+    background-color: transparent;
+    background-image: url('../img/close_white.svg');
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+}
+
+.header_grid{
+    max-width: 1500px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header_logo img{
+    height: 60px;
+}
+
+.header_links{
+    display: flex;
+    gap: 60px;
+}
+
+.header_links a{
+    text-decoration: none;
+    color: #FFF;
+    text-transform: uppercase;
+    gap: 15px;
+    font-size: 15pt;
+    font-family: ShareTechMono;
+    text-decoration: none;
+    transition: text-decoration 1s;
+}
+
+.header_links a::after{
+    content: '';
+    width: 0px;
+    height: 2px;
+    display: block;
+    background: #FFF;
+    transition: 300ms;
+}
+
+.header_links a:hover::after{
+    width: 100%;
+}
+
+.header_scrolled{
+    padding: 20px 0;
+    background-color: #FFF;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.header_scrolled .header_grid .header_links a{
+    text-decoration: none;
+    color: #230930;
+    text-transform: uppercase;
+    gap: 15px;
+    font-size: 15pt;
+    font-family: ShareTechMono;
+}
+
+.header_scrolled .header_grid .header_links a::after{
+    content: '';
+    width: 0px;
+    height: 2px;
+    display: block;
+    background: #230930;
+    transition: 300ms;
+}
+
+.header_scrolled .header_grid .header_links a:hover::after{
+    width: 100%;
+}
+
+/* #################### MAIN #################### */
+
+.main{
+    background-color: #230930;
+    display: flex;
+    justify-content: center;
+    height: calc(100vh - 100px);
+}
+
+.main_grid{
+    max-width: 1500px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+}
+
+.main_text{
+    display: flex;
+    flex-direction: column;
+    color: #FFF;
+    gap: 40px;
+    max-width: 55%;
+}
+
+.main_img{
+    width: 70%;
+}
+
+/* #################### SERVICOS #################### */
+
+.servicos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0 50px 0;
+}
+
+.servicos_grid{
+    max-width: 1500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cards_servicos{
+    display: flex;
+    gap: 20px;
+    padding-top: 50px;
+    justify-content: center;
+}
+
+.servicos_grid h3{
+    padding-left: 14%;
+    color: #230930;
+
+}
+
+.card_servicos{
+    display: flex;
+    flex-direction: column;
+    border: solid #230930 2px;
+    border-radius: 30px;
+    width: 18%;
+    transition: width 0.5s;
+}
+
+.card_servicos:hover{
+    width: 25%;
+}
+
+.card_servicos_img_container{
+    background-color: #230930;
+    border-radius: 25px 25px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+.card_servicos_img_container div{
+    background-color: #5f435f;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    position: relative;
+}
+
+.card_servicos_img_container div img{
+    height: 70%;
+    position: absolute;
+    margin: auto;
+    padding: 20px 85px 20px 85px;
+    transition: height 0.5s;
+}
+
+.card_servicos_img_container div .card_servicos_img_container_hover{
+    height: 90%;
+}
+
+.card_servicos_text{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #230930;
+    text-align: center;
+    margin: 30px 15px 40px 15px;
+    font-weight: bold;
+}
+
+.card_servicos_text p{
+    font-size: 14pt;
+    text-align: center;
+    line-height: 17pt;
+    font-weight: normal;
+}
+
+/* #################### SOBRE NÓS #################### */
+
+.sobre{
+    padding: 180px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #230930;
+}
+
+.sobre_grid{
+    max-width: 1500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.sobre_grid h3{
+    padding-left: 14%;
+    color: #FFF;
+    align-self: flex-start;
+}
+
+.sobre_grid_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sobre_grid_div p{
+    font-size: 20pt;
+    font-weight: 400;
+    line-height: 40pt;
+    max-width: 900px;
+    justify-self: center;
+    align-self: center;
+    color: #FFF;
+}
+
+.sobre_grid_div img{
+    width: 500px;
+}
+
+/* #################### CONTATO #################### */
+
+.contato{
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.contact_background{
+    position: absolute;
+    width: 2560px;
+    height: 100%;
+    margin: 0 auto;
+    z-index: -1;
+    object-fit: cover;
+    justify-self: flex-end;
+    align-self: flex-end;
+    right: 0;
+}
+
+
+.contato_grid{
+    max-width: 1500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.contato_grid h3{
+    padding-left: 14%;
+    color: #230930;
+    align-self:flex-start;
+}
+
+.contato_form{
+    max-width: 600px;
+    background-color: #230930;
+    padding: 50px 50px 25px 50px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+}
+
+.contato_form label{
+    color: #FFF;
+    font-family: Roboto, Fallback, sans-serif;
+    font-size: 18pt;
+}
+
+.contato_form input, .contato_form textarea{
+    color: #230930;
+    font-family: Roboto, Fallback, sans-serif;
+    font-size: 18pt;
+    background-color: #FFF;
+    padding: 10px 20px;
+    border-radius: 20px;
+    max-width: 92%;
+}
+
+.contato_form textarea{
+    
+    min-width: 92%;
+    max-height: 200px;
+    min-height: 200px;
+}
+
+.contato_form input[type="submit"]{
+    background-color: #5f435f;
+    justify-self: center;
+    align-self: flex-end;
+    font-weight: bold;
+    padding: 10px 40px;
+}
+
+.contato_form input[type="submit"]:hover{
+    background-color: #FFFFFF;
+    color: #230930;
+    cursor: pointer;
+}
+
+/* #################### FOOTER #################### */
+
+.footer{
+    background-color: #230930;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    max-width: 100vw;
+}
+
+.real_footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding: 70px 0;
+    
+    max-width: 100vw;
+}
+
+.footer_logo img{
+    height: 200px;
+}
+
+.footer_social{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.footer_social div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.footer_social div a{
+    text-decoration: none;
+}
+
+.copy{
+    background-color: #230930;
+    width: 100%;
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100vw;
+}
+
+@media (max-width: 1775px){
+    .header_grid{
+        max-width: 80%;
+    }
+    .main_grid{
+        max-width: 80%;
+    }
+    .servicos_grid{
+        max-width: 80%;
+        min-width: 80%;
+    }
+    .cards_servicos{
+        flex-wrap: wrap;
+    }
+    .card_servicos{
+        min-width: 250px;
+    }
+    .sobre_grid{
+        max-width: 80%;
+    }
+    .sobre_grid_div{
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+    .sobre_grid_div p{
+        width: 50%;
+    }
+}
+
+@media (max-width: 1270px){
+    .header_grid{
+        max-width: 80%;
+    }
+    .main{
+        height: unset;
+        max-height: unset;
+        padding-bottom: 100px;
+    }
+    .main_grid{
+        max-width: 80%;
+        flex-wrap: wrap-reverse;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    .main_text{
+        width: 100%;
+    }
+    .main_grid .main_text{
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+    }
+    .main_grid .main_img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main_grid .main_img object{
+        max-width: 400px;
+        justify-self: center;
+        align-self: center;
+    }
+    .servicos_grid{
+        max-width: 80%;
+        min-width: 80%;
+    }
+    .servicos_grid h3{
+        padding-left: 0;
+        align-self: center;
+    }
+    .cards_servicos{
+        flex-wrap: wrap;
+    }
+    .card_servicos{
+        min-width: 250px;
+    }
+    .sobre_grid{
+        max-width: 80%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .sobre_grid h3{
+        padding: 0;
+        text-align: center;
+        justify-self: center;
+        align-self: center;
+    }
+    .sobre_grid_div{
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+    .sobre_grid_div p{
+        width: 100%;
+    }
+    .contato_grid h3{
+        padding-left: 0;
+        align-self: center;
+        color: black;
+    }
+    .real_footer{
+        flex-wrap: wrap;
+    }
+}
+@media (max-width: 750px){
+    .header{
+        display: none;
+    }
+    .header_mobile{
+        display: flex;
+    }
+    .contato .contato_grid .contato_form{
+        max-width: 70%;
+    }
+
+    .footer .real_footer .footer_logo{
+        display: flex;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer .real_footer .footer_logo img{
+        max-width: 70%;
+    }
+    .servicos .servicos_grid .cards_servicos .card_servicos{
+        width: 100%;
+    }
+    .sobre .sobre_grid .sobre_grid_div p{
+        font-size: 15pt;
+        line-height: 23pt;
+    }
+    .sobre .sobre_grid .sobre_grid_div img{
+        max-width: 75%;
+    }
+    .footer .copy p{
+        text-align: center;
+    }
+}

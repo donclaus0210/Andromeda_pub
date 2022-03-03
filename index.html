@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <script src="scripts/jquery.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Andromeda Code</title>
+    <link rel="shortcut icon" href="img/favicon.svg">
+</head>
+<body class="body_loader">
+    <!-- LOADER -->
+
+    <div class="loader">
+        <object type="image/svg+xml" data="img/loading_animated.svg"></object>
+    </div>
+
+    <!-- HEADER -->
+
+    <header class="header">
+        <div class="header_grid">
+            <div class="header_logo">
+                <img id="header_img" src="img/logo_novo_white.svg" alt="ANDROMEDA code">
+            </div>
+            <div class="header_links">
+                <a href="#servicos">Serviços</a>
+                <a href="#sobre">Sobre Nós</a>
+                <a href="#contato">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <header class="header_mobile">
+        <img class="header_img_mobile" src="img/logo_novo_white.svg" alt="ANDROMEDA code">
+        <button onclick="open_hide_menu()" class="header_button"></button>
+    </header>
+
+    <div class="menu">
+        <button onclick="hide_open_menu()"></button>
+        <a onclick="hide_open_menu()" href="#servicos">Serviços</a>
+        <a onclick="hide_open_menu()" href="#sobre">Sobre Nós</a>
+        <a onclick="hide_open_menu()" href="#contato">Contato</a>
+    </div>
+
+    <!-- MAIN -->
+
+    <section id="main" class="main">
+        <div class="main_grid">
+            <div class="main_text">
+                <h1>Software sob medida</h1>
+                <h2>Geramos valor ao seu negócio, por meio de soluções de software seguras, eficazes e inovadoras.</h2>
+            </div>
+            <div class="main_img">
+                <object type="image/svg+xml" data="img/Smart_City.svg"></object>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+
+    <section id="servicos" class="servicos">
+        <div class="servicos_grid">
+            <h3 class="title_servicos">Serviços</h3>
+            <div class="cards_servicos">
+                <div onmouseleave="leaveElement(this)" onmouseenter="hoverElement(this)" class="card_servicos">
+                    <div class="card_servicos_img_container">
+                        <div>
+                            <img src="img/iot.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="card_servicos_text">
+                        <h4>Integração de produtos para IOT</h4>
+                        <p>
+                            Adapte seu produto para a industria 4.0!
+                            Transformamos seu produto para ser compatível com IOT, permitindo que troque dados e
+                            transmita informações de forma segura e eficiente gerando valor ao seu
+                            negócio!
+                        </p>
+                    </div>
+                </div>
+                <div onmouseleave="leaveElement(this)" onmouseenter="hoverElement(this)" class="card_servicos">
+                    <div class="card_servicos_img_container">
+                        <div>
+                            <img src="img/chip.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="card_servicos_text">
+                        <h4>Desenvolvimento de softwares embarcados</h4>
+                        <p>
+                            Dê vida ao seu projeto!
+                            Desenvolvemos firmwares eficientes para microcontroladores diversos,
+                            ARM, Raspberry, Beaglebone, entre outros
+                        </p>
+                    </div>
+                </div>
+                <div onmouseleave="leaveElement(this)" onmouseenter="hoverElement(this)" class="card_servicos">
+                    <div class="card_servicos_img_container">
+                        <div>
+                            <img src="img/code.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="card_servicos_text">
+                        <h4>Desenvolvimento de softwares Desktop</h4>
+                        <p>
+                            Software como você precisar!
+                            Nós da Andromeda temos conhecimento e experiência em desenvolvimento de softwares desktop Windows e multiplataformas (Linux e MAC OS)
+                            sempre buscando gerar valor ao cliente. 
+                        </p>
+                    </div>
+                </div>
+                <div onmouseleave="leaveElement(this)" onmouseenter="hoverElement(this)" class="card_servicos">
+                    <div class="card_servicos_img_container">
+                        <div>
+                            <img src="img/solution.svg" alt="">
+                        </div>
+                    </div>
+                    <div class="card_servicos_text">
+                        <h4>Desenvolvimento de soluções IOT</h4>
+                        <p>
+                            Desde a especificação e desenvolvimento do firmware, até a arquitetura
+                            de rede e de IOT necessária, planejamos e desenvolvemos para chegar na
+                            solução esperada por nossos clientes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- SOBRE NÓS -->
+
+    <section id="sobre" class="sobre">
+        <div class="sobre_grid">
+            <h3>Sobre Nós</h3>
+            <div class="sobre_grid_div">
+                <p>
+                    Idealizada em 2018 e fundada oficialmente em 2021, a Andrômeda é uma empresa jovem com o objetivo de fornecer soluções técnologicas aos clientes e parceiros.
+                    <br>
+                    <br>
+                    Nossa missão é ajudar os empreendimentos a trabalharem de forma mais inteligente, tomando decisões baseadas em dados,
+                    com isso criando a melhor experiência possível para seus clientes.
+                </p>
+                <img src="img/about_us.svg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+
+    <section id="contato" class="contato">
+        <div class="contato_grid">
+            <h3>Contato</h3>
+            <form class="contato_form" action="">
+                <label for="">Nome:*</label>
+                <input type="text" name="" id="">
+                <label for="">Email:*</label>
+                <input type="email" name="" id="">
+                <label for="">Tel./Cel.:*</label>
+                <input type="tel" name="" id="">
+                <label for="">Mensagem:</label>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+        <div class="contact_background">
+            <object type="image/svg+xml" data="img/background_contact_animated.svg"></object>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+        <div class="real_footer">
+            <div class="footer_logo">
+                <img src="img/logo_novo_white.svg" alt="ANDROMEDA CODE">
+            </div>
+            <div class="footer_social">
+                <h5>Redes Sociais</h5>
+                <div>
+                    <a href="#" target="_blank">
+                        <img src="img/whats.svg" alt="">
+                    </a>
+                    <a href="#" target="_blank">
+                        <img src="img/insta.svg" alt="">
+                    </a>
+                    <a href="#" target="_blank">
+                        <img src="img/github.svg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="copy">
+            <p>Copyright © 2022 Andromeda Code - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+<script type="text/javascript" src="scripts/loader.js"></script>
+
+<script type="text/javascript" src="scripts/cards_animation.js"></script>
+
+<script type="text/javascript" src="scripts/change_header.js"></script>
+
+<script type="text/javascript" src="scripts/menu_logic.js"></script>
+
+</html>

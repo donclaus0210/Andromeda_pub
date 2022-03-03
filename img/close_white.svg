@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="49.524" style="stroke: rgb(0, 0, 0); stroke-width: 0px; fill: rgb(255, 255, 255);" y="100" rx="24.762" ry="24.762" x="31.78" transform="matrix(0.7071, 0.707114, -0.707114, 0.7071, 124.329315, -52.114105)"/>
+  <rect width="400" height="49.524" style="stroke: rgb(0, 0, 0); stroke-width: 0px; fill: rgb(255, 255, 255);" y="100" rx="24.762" ry="24.762" x="31.78" transform="matrix(-0.7071, 0.707114, 0.707114, 0.7071, 275.67067, -52.114116)"/>
+</svg>
